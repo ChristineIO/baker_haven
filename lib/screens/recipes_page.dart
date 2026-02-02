@@ -2,6 +2,8 @@ import 'package:baker_haven/data/cake_ingredients.dart';
 import 'package:baker_haven/widgets/recipe_card.dart';
 import 'package:flutter/material.dart';
 
+import '../data/cookie_ingredients.dart';
+
 class RecipesPage extends StatelessWidget {
   const RecipesPage({super.key});
 
@@ -18,8 +20,8 @@ class RecipesPage extends StatelessWidget {
                 Image.asset('assets/images/banner_recipes_icons.png'),
 
                 const SizedBox(height: 20),
-                RecipeCard(ingredients: cakeIngredients),
-                RecipeCard(ingredients: cakeIngredients),
+                RecipeCard(title: cakeRecipe['title'] as String, ingredients: cakeRecipe['ingredients'] as List<String>),
+                RecipeCard(title: cookieRecipe['title'] as String, ingredients: cookieRecipe['ingredients'] as List<String>),
               ],
             ),
           ),

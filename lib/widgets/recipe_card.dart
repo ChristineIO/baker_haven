@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class RecipeCard extends StatelessWidget {
 
   final List<String> ingredients;
+  final String title;
 
-  const RecipeCard({super.key, required this.ingredients});
+  const RecipeCard({super.key, required this.title, required this.ingredients});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,9 +26,9 @@ class RecipeCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Cinnamon Roll Delight!',
-                    style: TextStyle(
+                  Text(
+                    title,
+                    style: const TextStyle(
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
                       color: Colors.brown,

@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          RecipeCard(ingredients: cakeIngredients),
+          RecipeCard(title: cakeRecipe['title'] as String, ingredients: cakeRecipe['ingredients'] as List<String>),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Align(

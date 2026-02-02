@@ -1,4 +1,6 @@
-final List<String> cakeIngredients = [
+final Map<String, dynamic> cakeRecipe = {
+  'title': 'Cinnamon Roll Delight!',
+  'ingredients': [
     '3 ripe bananas',
     '1 egg',
     '1 tsp vanilla',
@@ -10,4 +12,5 @@ final List<String> cakeIngredients = [
     '1 tsp ground cinnamon',
     'Pinch of salt',
     '100g chopped walnuts (optional)',
-  ];
+  ],
+};
