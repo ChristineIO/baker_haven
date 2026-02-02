@@ -1,3 +1,4 @@
+import 'package:baker_haven/screens/recipe_page.dart';
 import 'package:flutter/material.dart';
 
 class RecipeCard extends StatelessWidget {
@@ -69,7 +70,9 @@ class RecipeCard extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(6.0),
                               ),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const RecipePage()));
+                            },
 
                             child: Text('see more...'),
                           ),
