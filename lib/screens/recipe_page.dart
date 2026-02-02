@@ -16,10 +16,15 @@ class RecipePage extends StatelessWidget {
           child: Center(
             child: Column(
               children: [
-                Image.asset('assets/images/banner_recipes_icons.png'),
+                Image.asset('assets/icons/bunny_icon.png'),
+
+                RecipeCard(
+                  title: cakeRecipe['title'] as String,
+                  ingredients: cakeRecipe['ingredients'] as List<String>,
+                  maxListValue: 1000,
+                ),
 
                 const SizedBox(height: 20),
-                RecipeCard(title: cakeRecipe['title'] as String, ingredients: cakeRecipe['ingredients'] as List<String>, maxListValue: 1000),
               ],
             ),
           ),
