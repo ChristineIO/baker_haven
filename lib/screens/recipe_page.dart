@@ -15,8 +15,15 @@ class RecipePage extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 20.0),
           child: Center(
             child: Column(
+              
               children: [
-                Image.asset('assets/icons/bunny_icon.png'),
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 25.0),
+                    child: Image.asset('assets/icons/bunny_icon.png', width: 100),
+                  ),
+                ),
 
                 RecipeCard(
                   title: cakeRecipe['title'] as String,
