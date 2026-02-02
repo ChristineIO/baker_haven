@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          RecipeCard(title: cakeRecipe['title'] as String, ingredients: cakeRecipe['ingredients'] as List<String>),
+          RecipeCard(title: cakeRecipe['title'] as String, ingredients: cakeRecipe['ingredients'] as List<String>, maxListValue: 6),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Align(
@@ -41,7 +41,12 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: Image.asset('assets/icons/cat_icon.png', width: 180),
+          ),
         ],
+        
       ),
     );
   }

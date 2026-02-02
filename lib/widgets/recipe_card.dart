@@ -4,8 +4,9 @@ class RecipeCard extends StatelessWidget {
 
   final List<String> ingredients;
   final String title;
+  final int maxListValue;
 
-  const RecipeCard({super.key, required this.title, required this.ingredients});
+  const RecipeCard({super.key, required this.title, required this.ingredients, required this.maxListValue});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -40,7 +41,7 @@ class RecipeCard extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      ...ingredients.take(6).map((item) {
+                      ...ingredients.take(maxListValue).map((item) {
                         return Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -49,7 +50,7 @@ class RecipeCard extends StatelessWidget {
                           ],
                         );
                       }),
-                      if (ingredients.length > 6)
+                      if (ingredients.length > maxListValue)
                         Align(
                           alignment: Alignment.centerRight,
                           child: TextButton(
