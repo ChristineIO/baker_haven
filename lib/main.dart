@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'screens/home.dart' show HomePage;
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -70,14 +71,16 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 15),
-                        child: const Text(
+                        child: Text(
                           'username',
-                          style: TextStyle(
-                            fontSize: 14,
+                          style: GoogleFonts.handjet(
+                            fontSize: 12,
                             fontWeight: FontWeight.bold,
-                            color: Color.fromARGB(255, 12, 4, 27),
+                            color: const Color.fromARGB(255, 12, 4, 27),
                           ),
                           textAlign: TextAlign.right,
+                          maxLines: 1,
+                          overflow: TextOverflow.fade,
                         ),
                       ),
                     ],
