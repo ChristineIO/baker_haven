@@ -40,12 +40,55 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 220,
-        title: Padding(
-          padding: const EdgeInsets.only(top: 15.0, bottom: 10.0),
-          child: Image.asset('assets/images/banner_icons.png'),
+        title: SizedBox(
+          height: 250,
+          child: Stack(
+            clipBehavior: Clip.none,
+            children: [
+              // Banner
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Image.asset(
+                  'assets/images/banner_icons.png',
+                  height: 250,
+                ),
+              ),
+
+              // Profile pill
+              Positioned(
+                top: 12,
+                right: 1,
+                child: SizedBox(
+                  width: 120,
+                  height: 150,
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Image.asset(
+                        'assets/icons/profile_tab_asset.png',
+                        fit: BoxFit.contain,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 15),
+                        child: const Text(
+                          'username',
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(255, 12, 4, 27),
+                          ),
+                          textAlign: TextAlign.right,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
-      body: HomePage()
+      body: HomePage(),
     );
   }
 }
