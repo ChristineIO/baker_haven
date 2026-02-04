@@ -1,7 +1,7 @@
+import 'package:baker_haven/widgets/profile_pill.dart';
 import 'package:flutter/material.dart';
 
 import 'screens/home.dart' show HomePage;
-import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -41,6 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 220,
+        surfaceTintColor: Colors.pink.shade700,
         title: SizedBox(
           height: 250,
           child: Stack(
@@ -52,46 +53,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Image.asset(
                   'assets/images/banner_icons.png',
                   height: 250,
+                  fit: BoxFit.contain,
                 ),
               ),
 
               // Profile pill
-              Positioned(
-                top: 12,
-                right: 1,
-                child: SizedBox(
-                  width: 120,
-                  height: 150,
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/icons/profile_tab_asset.png',
-                        fit: BoxFit.contain,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 15),
-                        child: Text(
-                          'username',
-                          style: GoogleFonts.handjet(
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                            color: const Color.fromARGB(255, 12, 4, 27),
-                          ),
-                          textAlign: TextAlign.right,
-                          maxLines: 1,
-                          overflow: TextOverflow.fade,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              ProfilePill(),
             ],
           ),
         ),
       ),
-      body: HomePage(),
+      body: SingleChildScrollView(child: HomePage()),
     );
   }
 }

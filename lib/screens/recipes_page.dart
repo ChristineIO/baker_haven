@@ -10,7 +10,10 @@ class RecipesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('All Recipes')),
+      appBar: AppBar(
+        title: const Text('All Recipes'),
+        surfaceTintColor: Colors.pink.shade700,
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.only(bottom: 20.0),
@@ -20,8 +23,16 @@ class RecipesPage extends StatelessWidget {
                 Image.asset('assets/images/banner_recipes_icons.png'),
 
                 const SizedBox(height: 20),
-                RecipeCard(title: cakeRecipe['title'] as String, ingredients: cakeRecipe['ingredients'] as List<String>, maxListValue: 6),
-                RecipeCard(title: cookieRecipe['title'] as String, ingredients: cookieRecipe['ingredients'] as List<String>, maxListValue: 6),
+                RecipeCard(
+                  title: cakeRecipe['title'] as String,
+                  ingredients: cakeRecipe['ingredients'] as List<String>,
+                  maxListValue: 6,
+                ),
+                RecipeCard(
+                  title: cookieRecipe['title'] as String,
+                  ingredients: cookieRecipe['ingredients'] as List<String>,
+                  maxListValue: 6,
+                ),
               ],
             ),
           ),

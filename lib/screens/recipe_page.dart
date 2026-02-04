@@ -9,19 +9,24 @@ class RecipePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Recipe - Cinnamon Roll Delight!')),
+      appBar: AppBar(
+        title: const Text('Recipe - Cinnamon Roll Delight!'),
+        surfaceTintColor: Colors.pink.shade700,
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.only(bottom: 20.0),
           child: Center(
             child: Column(
-              
               children: [
                 Align(
                   alignment: Alignment.topLeft,
                   child: Padding(
                     padding: const EdgeInsets.only(top: 25.0),
-                    child: Image.asset('assets/icons/bunny_icon.png', width: 100),
+                    child: Image.asset(
+                      'assets/icons/bunny_icon.png',
+                      width: 100,
+                    ),
                   ),
                 ),
 
