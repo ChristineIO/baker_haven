@@ -40,20 +40,21 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 220,
-        surfaceTintColor: Colors.pink.shade700,
+        toolbarHeight: 300,
+        surfaceTintColor: Colors.transparent,
         title: SizedBox(
-          height: 250,
+          height: 300,
           child: Stack(
             clipBehavior: Clip.none,
             children: [
               // Banner
               Align(
-                alignment: Alignment.centerLeft,
+                alignment: Alignment.topCenter,
                 child: Image.asset(
-                  'assets/images/banner_icons.png',
-                  height: 250,
-                  fit: BoxFit.contain,
+                  'assets/images/banner_icons_cropped.png',
+                  height: 400,
+                  width: 400,
+                  fit: BoxFit.fitWidth,
                 ),
               ),
 
