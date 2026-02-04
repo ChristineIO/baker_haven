@@ -26,7 +26,7 @@ class ProfilePill extends StatelessWidget {
                 style: GoogleFonts.handjet(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
-                  color: const Color.fromARGB(255, 12, 4, 27),
+                  color: Colors.pink.shade900,
                 ),
                 textAlign: TextAlign.right,
                 maxLines: 1,
