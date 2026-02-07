@@ -13,6 +13,24 @@ class _CreateRecipeState extends State<CreateRecipe> {
     TextEditingController(),
   ];
 
+  void _cleanupEmptyIngredients() {
+    // Keep only ONE empty controller (the last one)
+    int emptyCount = 0;
+
+    _ingredientsControllers.removeWhere((controller) {
+      if (controller.text.trim().isEmpty) {
+        emptyCount++;
+        return emptyCount > 1;
+      }
+      return false;
+    });
+
+    // Safety net: never allow zero fields
+    if (_ingredientsControllers.isEmpty) {
+      _ingredientsControllers.add(TextEditingController());
+    }
+  }
+
   @override
   void dispose() {
     _titleController.dispose();
@@ -57,15 +75,11 @@ class _CreateRecipeState extends State<CreateRecipe> {
       appBar: AppBar(
         title: const Text('Create Recipe'),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.check),
-            onPressed: _saveRecipe,
-          ),
+          IconButton(icon: const Icon(Icons.check), onPressed: _saveRecipe),
         ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _addIngredient,
-        shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(8)),
         child: const Icon(Icons.add),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
@@ -86,9 +100,27 @@ class _CreateRecipeState extends State<CreateRecipe> {
                 itemCount: _ingredientsControllers.length,
                 itemBuilder: (context, index) {
                   return Padding(
-                    padding: const EdgeInsets.only(bottom: 12),
+                    padding: EdgeInsets.only(bottom: 12),
                     child: TextField(
                       controller: _ingredientsControllers[index],
+                      onChanged: (value) {
+                        final isLast =
+                            index == _ingredientsControllers.length - 1;
+                        final hasText = value.trim().isNotEmpty;
+
+                        if (isLast && hasText) {
+                          setState(() {
+                            _ingredientsControllers.add(
+                              TextEditingController(),
+                            );
+                          });
+                        }
+
+                        setState(() {
+                          _cleanupEmptyIngredients();
+                        });
+                      },
+
                       decoration: InputDecoration(
                         labelText: 'Ingredient ${index + 1}',
                         border: const OutlineInputBorder(),
@@ -98,6 +130,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
                 },
               ),
             ),
+            const SizedBox(height: 22),
           ],
         ),
       ),
