@@ -41,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 300,
-        surfaceTintColor: Colors.transparent,
+        surfaceTintColor: null,
         title: SizedBox(
           height: 300,
           child: Stack(
