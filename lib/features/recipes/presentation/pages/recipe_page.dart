@@ -1,7 +1,7 @@
-import 'package:baker_haven/widgets/recipe_card.dart';
+import 'package:baker_haven/features/recipes/presentation/widgets/recipe_card.dart';
 import 'package:flutter/material.dart';
 
-import '../data/cake_ingredients.dart';
+import '../../../../data/cake_ingredients.dart';
 
 class RecipePage extends StatelessWidget {
   const RecipePage({super.key});

@@ -36,6 +36,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  bool isLoggedIn = true; // Simulated login state
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,8 +59,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
 
-              // Profile pill
-              ProfilePill(),
+              isLoggedIn
+                  ? ProfilePill()
+                  : Align(
+                      alignment: Alignment.bottomRight,
+                      child: Image.asset('assets/icons/cat_icon.png', width: 180),
+                    ),
+              
             ],
           ),
         ),

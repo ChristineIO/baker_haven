@@ -1,4 +1,4 @@
-import 'package:baker_haven/screens/recipe_page.dart';
+import 'package:baker_haven/features/recipes/presentation/pages/recipe_page.dart';
 import 'package:flutter/material.dart';
 
 class RecipeCard extends StatelessWidget {
